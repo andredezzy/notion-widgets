@@ -9,6 +9,8 @@
   ],
   "rules": {
     "prettier/prettier": "error",
+    "newline-before-return": "error",
+    "newline-after-var": ["error", "always"],
     "no-use-before-define": "off",
     "global-require": "off",
     "no-unused-vars": "off",

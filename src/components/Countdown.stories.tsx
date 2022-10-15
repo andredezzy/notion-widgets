@@ -5,6 +5,9 @@ import { Countdown, CountdownProps } from './Countdown';
 export default {
   title: 'Widgets/Countdown',
   component: Countdown,
+  args: {
+    totalSeconds: 120,
+  },
 } as Meta<CountdownProps>;
 
 export const Default: StoryObj<CountdownProps> = {};
