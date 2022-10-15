@@ -22,7 +22,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           description: 'Widgets for Notion.so',
           images: [],
         }}
-        title="Notion Widgets"
+        titleTemplate="%s | Notion Widgets"
       />
 
       <Head>
