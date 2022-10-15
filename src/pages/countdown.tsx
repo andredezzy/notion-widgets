@@ -1,20 +1,35 @@
-import { GetStaticProps } from 'next';
+import { GetServerSideProps } from 'next';
 import { NextSeo } from 'next-seo';
 
 import { Countdown } from '~/components/Countdown';
 
-export default function CountdownPage() {
+interface CountdownPageProps {
+  title: string;
+  totalSeconds: number;
+}
+
+export default function CountdownPage({
+  title,
+  totalSeconds,
+}: CountdownPageProps) {
   return (
     <>
       <NextSeo title="Countdown" />
 
-      <Countdown totalSeconds={120} />
+      <Countdown title={title} totalSeconds={totalSeconds} />
     </>
   );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps<
+  CountdownPageProps
+> = async ({ query }) => {
+  const { title, totalSeconds } = query;
+
   return {
-    props: {},
+    props: {
+      title: String(title) || 'Countdown',
+      totalSeconds: Number(totalSeconds) || 120,
+    },
   };
 };

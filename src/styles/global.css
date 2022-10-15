@@ -6,3 +6,7 @@ body {
   text-rendering: optimizelegibility !important;
   -webkit-font-smoothing: antialiased !important;
 }
+
+html, body, #__next {
+  @apply h-full;
+}

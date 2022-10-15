@@ -6,6 +6,7 @@ export default {
   title: 'Widgets/Countdown',
   component: Countdown,
   args: {
+    title: 'Countdown',
     totalSeconds: 120,
   },
 } as Meta<CountdownProps>;

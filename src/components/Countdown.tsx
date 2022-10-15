@@ -4,10 +4,11 @@ import { differenceInSeconds } from 'date-fns';
 import { Play, Pause, ArrowCounterClockwise } from 'phosphor-react';
 
 export interface CountdownProps {
+  title: string;
   totalSeconds: number;
 }
 
-export function Countdown({ totalSeconds }: CountdownProps) {
+export function Countdown({ title, totalSeconds }: CountdownProps) {
   const [startDate, setStartDate] = useState<number>();
   const [pausedDate, setPausedDate] = useState<number>();
   const [secondsPassed, setSecondsPassed] = useState(0);
@@ -70,8 +71,8 @@ export function Countdown({ totalSeconds }: CountdownProps) {
   const seconds = String(secondsAmount).padStart(2, '0');
 
   return (
-    <div className="border-2 border-white rounded-lg flex flex-col gap-4 justify-center items-center h-full min-h-[9rem]">
-      <span className="text-lg text-white">Countdown</span>
+    <div className="border-2 border-white rounded-lg flex flex-col gap-4 justify-center items-center h-full">
+      <span className="text-lg text-white">{title}</span>
 
       <div className="flex items-center gap-3">
         <span className="text-xl text-white">{`${minutes} : ${seconds}`}</span>
