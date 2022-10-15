@@ -1,0 +1,68 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "prettier"
+  ],
+  "plugins": [
+    "prettier",
+    "import-helpers"
+  ],
+  "rules": {
+    "prettier/prettier": "error",
+    "no-use-before-define": "off",
+    "global-require": "off",
+    "no-unused-vars": "off",
+    "no-underscore-dangle": "off",
+    "import/prefer-default-export": "off",
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-newline": ["warn", { "prevent": false }],
+    "react/jsx-props-no-multi-spaces": "warn",
+    "react/jsx-sort-props": "warn",
+    "react/prop-types": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error",
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [
+          ".tsx"
+        ]
+      }
+    ],
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          "/^react$/", // "react" module always at the first line
+          "/^next/",
+          "module",
+          "/^~/",
+          "parent",
+          "sibling",
+          "index"
+        ],
+        "alphabetize": {
+          "order": "asc",
+          "ignoreCase": true
+        }
+      }
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "off",
+      {
+        "devDependencies": true
+      }
+    ]
+  }
+}
