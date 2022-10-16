@@ -24,12 +24,12 @@ export default function CountdownPage({
 export const getServerSideProps: GetServerSideProps<
   CountdownPageProps
 > = async ({ query }) => {
-  const { title, totalSeconds } = query;
+  const { title = 'Countdown', totalSeconds = 120 } = query;
 
   return {
     props: {
-      title: String(title) || 'Countdown',
-      totalSeconds: Number(totalSeconds) || 120,
+      title: String(title),
+      totalSeconds: Number(totalSeconds),
     },
   };
 };

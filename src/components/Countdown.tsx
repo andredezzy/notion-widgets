@@ -71,30 +71,58 @@ export function Countdown({ title, totalSeconds }: CountdownProps) {
   const seconds = String(secondsAmount).padStart(2, '0');
 
   return (
-    <div className="border-2 border-white rounded-lg flex flex-col gap-4 justify-center items-center h-full">
-      <span className="text-lg text-white">{title}</span>
+    <div className="border-2 border-white rounded-lg flex flex-col gap-4 justify-center items-center h-full py-4">
+      <span className="text-lg text-white leading-tight">{title}</span>
 
-      <div className="flex items-center gap-3">
-        <span className="text-xl text-white">{`${minutes} : ${seconds}`}</span>
+      <div className="flex items-center gap-4">
+        <div className="flex gap-1">
+          <span className="text-xl bg-neutral-800 text-white font-mono font-medium h-9 w-7 flex justify-center items-center rounded">
+            {minutes[0]}
+          </span>
+
+          <span className="text-xl bg-neutral-800 text-white font-mono font-medium h-9 w-7 flex justify-center items-center rounded">
+            {minutes[1]}
+          </span>
+
+          <span className="text-xl text-white font-mono font-extrabold h-9 w-4 flex justify-center items-center rounded">
+            :
+          </span>
+
+          <span className="text-xl bg-neutral-800 text-white font-mono font-medium h-9 w-7 flex justify-center items-center rounded">
+            {seconds[0]}
+          </span>
+
+          <span className="text-xl bg-neutral-800 text-white font-mono font-medium h-9 w-7 flex justify-center items-center rounded">
+            {seconds[1]}
+          </span>
+        </div>
 
         <div className="flex gap-2">
           <button
-            className="bg-white h-9 w-9 rounded flex items-center justify-center"
+            className="bg-white border border-white h-9 w-9 rounded flex items-center justify-center hover:bg-transparent transition-colors group"
             onClick={toggleCountdown}
           >
             {!isRunning ? (
-              <Play className="fill-black" size={16} weight="fill" />
+              <Play
+                className="group-hover:fill-white fill-black transition-colors"
+                size={16}
+                weight="fill"
+              />
             ) : (
-              <Pause className="fill-black" size={16} weight="fill" />
+              <Pause
+                className="group-hover:fill-white fill-black transition-colors"
+                size={16}
+                weight="fill"
+              />
             )}
           </button>
 
           <button
-            className="border border-white h-9 w-9 rounded flex items-center justify-center"
+            className="border border-white h-9 w-9 rounded flex items-center justify-center hover:bg-white transition-colors group"
             onClick={resetCountdown}
           >
             <ArrowCounterClockwise
-              className="text-white"
+              className="group-hover:text-black text-white transition-colors"
               size={16}
               weight="bold"
             />
