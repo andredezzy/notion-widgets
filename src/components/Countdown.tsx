@@ -4,7 +4,7 @@ import { differenceInSeconds } from 'date-fns';
 import { Play, Pause, ArrowCounterClockwise } from 'phosphor-react';
 
 export interface CountdownProps {
-  title: string;
+  title?: string;
   totalSeconds: number;
 }
 
@@ -72,7 +72,9 @@ export function Countdown({ title, totalSeconds }: CountdownProps) {
 
   return (
     <div className="border-2 border-white rounded-lg flex flex-col gap-4 justify-center items-center h-full py-4">
-      <span className="text-lg text-white leading-tight">{title}</span>
+      {title && (
+        <span className="text-lg text-white leading-tight">{title}</span>
+      )}
 
       <div className="flex items-center gap-4">
         <div className="flex gap-1">
