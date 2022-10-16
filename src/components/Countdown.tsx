@@ -71,7 +71,7 @@ export function Countdown({ title, totalSeconds }: CountdownProps) {
   const seconds = String(secondsAmount).padStart(2, '0');
 
   return (
-    <div className="border-2 border-white rounded-lg flex flex-col gap-4 justify-center items-center h-full py-4">
+    <div className="border border-white rounded-lg flex flex-col gap-4 justify-center items-center h-full py-4">
       {title && (
         <span className="text-lg text-white leading-tight">{title}</span>
       )}
