@@ -110,9 +110,11 @@ export function Countdown({ title, totalSeconds }: CountdownProps) {
         <div className="flex gap-2">
           <button
             className={clsx(
-              'bg-black dark:bg-white border border-black dark:border-white h-9 w-9 rounded flex items-center justify-center dark:hover:bg-transparent hover:bg-transparent transition-colors group',
+              'border border-black dark:border-white h-9 w-9 rounded flex items-center justify-center transition-colors group',
               {
                 'bg-transparent hover:bg-black dark:hover:bg-white': isRunning,
+                'bg-black dark:bg-white dark:hover:bg-transparent hover:bg-transparent':
+                  !isRunning,
               },
             )}
             onClick={toggleCountdown}
