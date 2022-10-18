@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+import { useTheme } from 'next-themes';
+
 import { clsx } from 'clsx';
 import { differenceInSeconds } from 'date-fns';
 import { Play, Pause, ArrowCounterClockwise } from 'phosphor-react';
@@ -75,30 +77,32 @@ export function Countdown({ title, totalSeconds }: CountdownProps) {
   const seconds = String(secondsAmount).padStart(2, '0');
 
   return (
-    <div className="border border-white rounded-lg flex flex-col gap-4 justify-center items-center h-full py-4">
+    <div className="border border-black dark:border-white rounded-lg flex flex-col gap-4 justify-center items-center h-full py-4">
       {title && (
-        <span className="text-lg text-white leading-tight">{title}</span>
+        <span className="text-lg text-black dark:text-white leading-tight">
+          {title}
+        </span>
       )}
 
       <div className="flex items-center gap-4">
         <div className="flex gap-1">
-          <span className="text-xl bg-neutral-800 text-white font-mono font-medium h-9 w-7 flex justify-center items-center rounded">
+          <span className="text-xl bg-neutral-200 dark:bg-neutral-800 text-black dark:text-white font-mono font-medium h-9 w-7 flex justify-center items-center rounded">
             {minutes[0]}
           </span>
 
-          <span className="text-xl bg-neutral-800 text-white font-mono font-medium h-9 w-7 flex justify-center items-center rounded">
+          <span className="text-xl bg-neutral-200 dark:bg-neutral-800 text-black dark:text-white font-mono font-medium h-9 w-7 flex justify-center items-center rounded">
             {minutes[1]}
           </span>
 
-          <span className="text-xl text-white font-mono font-extrabold h-9 w-4 flex justify-center items-center rounded">
+          <span className="text-xl text-neutral-800 dark:text-neutral-300 font-mono font-extrabold h-9 w-4 flex justify-center items-center rounded">
             :
           </span>
 
-          <span className="text-xl bg-neutral-800 text-white font-mono font-medium h-9 w-7 flex justify-center items-center rounded">
+          <span className="text-xl bg-neutral-200 dark:bg-neutral-800 text-black dark:text-white font-mono font-medium h-9 w-7 flex justify-center items-center rounded">
             {seconds[0]}
           </span>
 
-          <span className="text-xl bg-neutral-800 text-white font-mono font-medium h-9 w-7 flex justify-center items-center rounded">
+          <span className="text-xl bg-neutral-200 dark:bg-neutral-800 text-black dark:text-white font-mono font-medium h-9 w-7 flex justify-center items-center rounded">
             {seconds[1]}
           </span>
         </div>
@@ -106,22 +110,22 @@ export function Countdown({ title, totalSeconds }: CountdownProps) {
         <div className="flex gap-2">
           <button
             className={clsx(
-              'bg-white border border-white h-9 w-9 rounded flex items-center justify-center hover:bg-transparent transition-colors group',
+              'bg-black dark:bg-white border border-black dark:border-white h-9 w-9 rounded flex items-center justify-center dark:hover:bg-transparent hover:bg-transparent transition-colors group',
               {
-                'bg-transparent hover:bg-white': isRunning,
+                'bg-transparent hover:bg-black dark:hover:bg-white': isRunning,
               },
             )}
             onClick={toggleCountdown}
           >
             {!isRunning ? (
               <Play
-                className="group-hover:fill-white fill-black transition-colors"
+                className="group-hover:fill-black dark:group-hover:fill-white fill-white dark:fill-black transition-colors"
                 size={16}
                 weight="fill"
               />
             ) : (
               <Pause
-                className="group-hover:fill-black fill-white transition-colors"
+                className="group-hover:fill-white dark:group-hover:fill-black fill-black dark:fill-white transition-colors"
                 size={16}
                 weight="fill"
               />
@@ -129,11 +133,11 @@ export function Countdown({ title, totalSeconds }: CountdownProps) {
           </button>
 
           <button
-            className="border border-white h-9 w-9 rounded flex items-center justify-center hover:bg-white transition-colors group"
+            className="border border-black dark:border-white h-9 w-9 rounded flex items-center justify-center hover:bg-black dark:hover:bg-white transition-colors group"
             onClick={resetCountdown}
           >
             <ArrowCounterClockwise
-              className="group-hover:text-black text-white transition-colors"
+              className="group-hover:text-white dark:group-hover:text-black text-black dark:text-white transition-colors"
               size={16}
               weight="bold"
             />

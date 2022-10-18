@@ -24,7 +24,7 @@ export default function CountdownPage({
 export const getServerSideProps: GetServerSideProps<
   CountdownPageProps
 > = async ({ query }) => {
-  const { title = 'Countdown', totalSeconds = 120 } = query;
+  const { title = 'Countdown ⏳', totalSeconds = 120 } = query;
 
   return {
     props: {

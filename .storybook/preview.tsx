@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { DocsContainer } from '@storybook/addon-docs';
 import { themes } from '@storybook/theming';
 import { useDarkMode } from 'storybook-dark-mode';
@@ -14,7 +14,7 @@ export const parameters = {
     },
   },
   darkMode: {
-    current: 'dark',
+    current: 'light',
     dark: { ...themes.dark },
     light: { ...themes.normal }
   },
@@ -29,7 +29,24 @@ export const parameters = {
       
       docs.theme = isDark ? themes.dark : themes.light;
 
-      return React.createElement(DocsContainer, props);
+      return <DocsContainer {...props} />;
 		},
 	},
 }
+
+export const decorators = [renderStory => {
+  const isDark = useDarkMode();
+
+  useEffect(() => {
+    const theme = isDark ? 'dark' : 'light';
+
+    const html = document.querySelector('html');
+    
+    if (html) {
+      html.classList.remove('dark', 'light');
+      html.classList.add(theme);
+    }
+  }, [isDark]);
+
+  return renderStory();
+}];
