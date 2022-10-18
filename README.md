@@ -4,9 +4,15 @@
 
 - [X] Setup project with Storybook
 - [X] Countdown widget
-- [ ] Theming based on Notion
+- [X] Theming based on system
+- [ ] Publish Storybook
+- [ ] Add testing
 - [ ] Timer widget
 - [ ] Counter widget
+
+## Documentation
+
+You can see Notion Widgets documentation here: [Notion.so](https://andredezzy.notion.site/Documentation-97678f1e84ed42a8a808b86f80c75a72)
 
 ## Example
 
