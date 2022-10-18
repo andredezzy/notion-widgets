@@ -39,21 +39,24 @@ export function Countdown({ title, totalSeconds }: CountdownProps) {
   }, [isRunning, startDate, totalSeconds]);
 
   function toggleCountdown() {
-    if (!startDate) {
-      setStartDate(Date.now());
+    if (isRunning) {
+      setPausedDate(Date.now());
+      setIsRunning(false);
+
+      return;
     }
 
     if (pausedDate) {
       setStartDate(Date.now() - (pausedDate - startDate));
       setPausedDate(undefined);
+
+      setIsRunning(true);
+
+      return;
     }
 
-    if (isRunning) {
-      setPausedDate(Date.now());
-      setIsRunning(false);
-    } else {
-      setIsRunning(true);
-    }
+    setStartDate(Date.now());
+    setIsRunning(true);
   }
 
   function resetCountdown() {
