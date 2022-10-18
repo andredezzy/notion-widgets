@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import { clsx } from 'clsx';
 import { differenceInSeconds } from 'date-fns';
 import { Play, Pause, ArrowCounterClockwise } from 'phosphor-react';
 
@@ -104,7 +105,12 @@ export function Countdown({ title, totalSeconds }: CountdownProps) {
 
         <div className="flex gap-2">
           <button
-            className="bg-white border border-white h-9 w-9 rounded flex items-center justify-center hover:bg-transparent transition-colors group"
+            className={clsx(
+              'bg-white border border-white h-9 w-9 rounded flex items-center justify-center hover:bg-transparent transition-colors group',
+              {
+                'bg-transparent hover:bg-white': isRunning,
+              },
+            )}
             onClick={toggleCountdown}
           >
             {!isRunning ? (
@@ -115,7 +121,7 @@ export function Countdown({ title, totalSeconds }: CountdownProps) {
               />
             ) : (
               <Pause
-                className="group-hover:fill-white fill-black transition-colors"
+                className="group-hover:fill-black fill-white transition-colors"
                 size={16}
                 weight="fill"
               />
