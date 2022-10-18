@@ -35,6 +35,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
       <ThemeProvider
         attribute="class"
+        enableColorScheme={false}
         forcedTheme={query.theme ? String(query.theme) : null}
       >
         <Component {...pageProps} />
