@@ -2,10 +2,13 @@ import { DefaultSeo } from 'next-seo';
 import { ThemeProvider } from 'next-themes';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 import '~/styles/global.css';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
+  const { query } = useRouter();
+
   return (
     <>
       <DefaultSeo
@@ -30,7 +33,10 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
 
-      <ThemeProvider attribute="class">
+      <ThemeProvider
+        attribute="class"
+        forcedTheme={query.theme ? String(query.theme) : null}
+      >
         <Component {...pageProps} />
       </ThemeProvider>
     </>
