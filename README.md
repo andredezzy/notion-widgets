@@ -3,6 +3,9 @@
 ## Overview
 
 - [Documentation](https://andredezzy.notion.site/Documentation-97678f1e84ed42a8a808b86f80c75a72)
+  - [Countdown](https://andredezzy.notion.site/Countdown-ae7b20ce0249491caefb2be218a43692)
+  - [Timer](https://andredezzy.notion.site/Timer-soon-fef173755f344adba9a4fee491915567)
+  - [Counter](https://andredezzy.notion.site/Counter-soon-0621e09d68c242089e23ac2f1957a469)
 - [Storybook](https://storybook.notion-widgets.andredezzy.com/)
 - [Example](https://andredezzy.notion.site/Week-25-3cdb6007b92740a79d2e5c900711fa97)
 - [Design](#Design)
@@ -19,7 +22,7 @@
 
 ## Design
 
-You can find the application UI design here: [Figma](https://www.figma.com/file/PEL2Z5PaCwk0SYfZ2isLzh/Notion-Widgets?node-id=1%3A696)
+You can find the project UI design here: [Figma](https://www.figma.com/file/PEL2Z5PaCwk0SYfZ2isLzh/Notion-Widgets?node-id=1%3A696)
 
 ## Roadmap
 
