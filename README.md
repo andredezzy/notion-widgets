@@ -1,24 +1,23 @@
 <img src=".github/assets/header.png" width="100%">
 
+## Overview
+
+- [Documentation](https://andredezzy.notion.site/Documentation-97678f1e84ed42a8a808b86f80c75a72)
+- [Storybook](https://storybook.notion-widgets.andredezzy.com/)
+- [Example](https://andredezzy.notion.site/Week-25-3cdb6007b92740a79d2e5c900711fa97)
+- [Design](#Design)
+
 ## To-do
 
 - [X] Setup project with Storybook
 - [X] Countdown widget
 - [X] Theming based on system
-- [ ] Publish Storybook
-- [ ] Add testing
+- [X] Publish Storybook
 - [ ] Timer widget
 - [ ] Counter widget
+- [ ] Add testing
 
-## Documentation
-
-You can see Notion Widgets documentation here: [Notion.so](https://andredezzy.notion.site/Documentation-97678f1e84ed42a8a808b86f80c75a72)
-
-## Example
-
-You can see a example Notion page using widgets here: [Notion.so](https://andredezzy.notion.site/Week-25-3cdb6007b92740a79d2e5c900711fa97)
-
-## Layout
+## Design
 
 You can find the application UI design here: [Figma](https://www.figma.com/file/PEL2Z5PaCwk0SYfZ2isLzh/Notion-Widgets?node-id=1%3A696)
 
