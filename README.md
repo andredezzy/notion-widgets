@@ -12,6 +12,9 @@
 
 ## To-do
 
+> **Warning**
+> This app is a work in progress. I'm building this in public. 
+
 - [X] Setup project with Storybook
 - [X] Countdown widget
 - [X] Theming based on system
@@ -25,6 +28,9 @@
 You can find the project UI design here: [Figma](https://www.figma.com/file/PEL2Z5PaCwk0SYfZ2isLzh/Notion-Widgets?node-id=1%3A696)
 
 ## Roadmap
+
+> **Warning**
+> This app is a work in progress. I'm building this in public. 
 
 If Hemes currently doesn't have a certain feature you think it's awesome, be sure to check out the [roadmap](https://andredezzy.notion.site/Notion-Widgets-7f6b16fa8034408398cca02c814179d9) to see if this is already planned for the future. Otherwise, we recommend you create a [discussion](https://github.com/andredezzy/notion-widgets/discussions/new?category=ideas) describing your enhancement request.
 
