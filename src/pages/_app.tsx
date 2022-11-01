@@ -18,12 +18,12 @@ export default function MyApp({ Component, pageProps }: AppProps) {
             href: '/favicon.ico',
           },
         ]}
-        description="Widgets for Notion.so 🎨"
+        description="Easy-useful widgets for Notion.so 🎨"
         openGraph={{
           url: 'https://notion-widgets.andredezzy.com/',
           site_name: 'notion-widgets.andredezzy.com',
           title: 'Notion Widgets',
-          description: 'Widgets for Notion.so 🎨',
+          description: 'Easy-useful widgets for Notion.so 🎨',
           images: [],
         }}
         titleTemplate="%s | Notion Widgets"
