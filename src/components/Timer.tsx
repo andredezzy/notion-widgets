@@ -4,12 +4,12 @@ import { clsx } from 'clsx';
 import { differenceInSeconds } from 'date-fns';
 import { Play, Pause, ArrowCounterClockwise } from 'phosphor-react';
 
-export interface CountdownProps {
+export interface TimerProps {
   title?: string;
-  totalSeconds: number;
+  initialSeconds?: number;
 }
 
-export function Countdown({ title, totalSeconds }: CountdownProps) {
+export function Timer({ title, initialSeconds = 0 }: TimerProps) {
   const [startDate, setStartDate] = useState<number>();
   const [pausedDate, setPausedDate] = useState<number>();
   const [secondsPassed, setSecondsPassed] = useState(0);
@@ -25,21 +25,14 @@ export function Countdown({ title, totalSeconds }: CountdownProps) {
           new Date(startDate),
         );
 
-        if (secondsDifference >= totalSeconds) {
-          setIsRunning(false);
-
-          setSecondsPassed(totalSeconds);
-          clearInterval(interval);
-        } else {
-          setSecondsPassed(secondsDifference);
-        }
+        setSecondsPassed(secondsDifference);
       }, 100);
     }
 
     return () => clearInterval(interval);
-  }, [isRunning, startDate, totalSeconds]);
+  }, [isRunning, startDate, initialSeconds]);
 
-  function toggleCountdown() {
+  function toggleTimer() {
     if (isRunning) {
       setPausedDate(Date.now());
       setIsRunning(false);
@@ -57,16 +50,17 @@ export function Countdown({ title, totalSeconds }: CountdownProps) {
     }
 
     setStartDate(Date.now());
+    setSecondsPassed(initialSeconds * 1000);
     setIsRunning(true);
   }
 
-  function resetCountdown() {
+  function resetTimer() {
     setStartDate(Date.now());
     setPausedDate(undefined);
-    setSecondsPassed(0);
+    setSecondsPassed(initialSeconds * 1000);
   }
 
-  const currentSeconds = totalSeconds - secondsPassed;
+  const currentSeconds = secondsPassed;
 
   const minutesAmount = Math.floor(currentSeconds / 60);
   const secondsAmount = currentSeconds % 60;
@@ -115,7 +109,7 @@ export function Countdown({ title, totalSeconds }: CountdownProps) {
                   !isRunning,
               },
             )}
-            onClick={toggleCountdown}
+            onClick={toggleTimer}
           >
             {!isRunning ? (
               <Play
@@ -134,7 +128,7 @@ export function Countdown({ title, totalSeconds }: CountdownProps) {
 
           <button
             className="border border-black dark:border-white h-9 w-9 rounded flex items-center justify-center hover:bg-black dark:hover:bg-white transition-colors group"
-            onClick={resetCountdown}
+            onClick={resetTimer}
           >
             <ArrowCounterClockwise
               className="group-hover:text-white dark:group-hover:text-black text-black dark:text-white transition-colors"

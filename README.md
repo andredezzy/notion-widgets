@@ -25,7 +25,7 @@
 - [X] Countdown widget
 - [X] Theming based on system
 - [X] Publish Storybook
-- [ ] Timer widget
+- [X] Timer widget
 - [ ] Counter widget
 - [ ] Add testing
 
