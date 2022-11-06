@@ -21,7 +21,7 @@ export default function TimerPage({ title, initialSeconds }: TimerPageProps) {
 export const getServerSideProps: GetServerSideProps<TimerPageProps> = async ({
   query,
 }) => {
-  const { title = 'Timer ⏳', initialSeconds = 0 } = query;
+  const { title = 'Timer ⏲️', initialSeconds = 0 } = query;
 
   return {
     props: {
